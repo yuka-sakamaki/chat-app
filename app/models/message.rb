@@ -3,7 +3,7 @@ class Message < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :content, presence: true, unless: was_atteched?
+  validates :content, presence: true, unless: :was_atteched?
 
   def was_atteched?
     self.image.attached?
